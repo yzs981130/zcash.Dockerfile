@@ -1,0 +1,8 @@
+services:
+  - docker
+
+script:
+  - docker build -t yzs981130/zcashd .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push yzs981130/zcashd
+
